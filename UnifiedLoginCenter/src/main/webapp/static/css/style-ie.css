@@ -1,0 +1,63 @@
+#txt_no,#txt_name{
+	height: 27px;
+}
+
+/**ie8*/
+input.form-control{
+	height: 20px \9;
+}
+#txt_no,#txt_name{
+	height: 18px \9;
+}
+#pageToGo,#drug_pageCount{
+	width: 20px \9; 
+	margin-right: 40px \9; 
+}
+#cname,#standardCode,#license,#mname,#specification,#facCatName,#itemNo,#itemName{
+	width:140px \9; 
+	height: 20px \9; 
+}
+#searchKey{
+	width: 300px \9; 
+	float: right \9;
+}
+.col-lg-5,.col-lg-6,.col-lg-4{
+	width:400px \9;
+	float: left \9;
+}
+div.zTreeDemoBackground .alltype{
+	background-image: url('ztreeStyle/img/bg_tree.png') \9;
+}
+div.zTreeDemoBackground .alltype button{
+	 background-image: url('ztreeStyle/img/change.jpg') \9; 
+}
+.modal-content #details,.modal-content #itemDetails{
+	 width:550px \9;
+}
+.modal-body-title,.modal-body-value,.modal-body-value-manage{
+	margin-left: 5px \9;
+	margin-right: 5px \9;
+	margin-top: 5px \9;
+	margin-bottom: 5px \9;
+	color:#000 \9;
+}
+.modal-content #details .col-lg-8{
+	width:500px \9;
+}
+/**ie10
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { 
+input.form-control{
+	height: 20px;
+}
+#txt_no,#txt_name{
+	height: 18px;
+}
+#pageToGo{
+	width: 20px;
+	margin-right: 40px;
+}
+#cname,#standardCode,#license,#mname,#specification{
+	width:140px;
+	height: 20px;
+}
+}*/

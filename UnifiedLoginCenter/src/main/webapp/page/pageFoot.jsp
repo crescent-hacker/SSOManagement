@@ -1,0 +1,2 @@
+<%@ page contentType="text/html; charset=UTF-8" import="java.util.*" %>
+<div id="footer"><div style="float: right;margin-right: 700px;z-index: 9999;line-height: 22px">2000-2014 广州健迅科技有限公司 版权所有</div></div>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--<property name="LOG_HOME" value="e:/AppData/log" />-->
+    <property name="LOG_HOME" value="/home/tomcat/tomcat7/logs/UnifiedLoginCenter" />
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="rollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/unifiedLoginCenter.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <MaxHistory>30</MaxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+        <!--日志文件最大的大小-->
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>50MB</MaxFileSize>
+        </triggeringPolicy>
+	</appender>
+
+	<!-- project default level -->
+    <!--开发环境配置-->
+	<logger name="com.jetsun" level="DEBUG" />
+    <!--生产环境配置-->
+	<!--<logger name="com.jetsun" level="INFO" />-->
+
+	<!--log4jdbc -->
+    <!--<logger name="jdbc.sqlonly" level="ERROR" />-->
+    <logger name="jdbc.sqltiming" level="INFO" />
+    <logger name="jdbc.audit" level="ERROR" />
+    <logger name="jdbc.resultset" level="ERROR" />
+    <logger name="jdbc.connection" level="ERROR" />
+
+    <!--根logger-->
+	<root level="ERROR">
+		<appender-ref ref="console" />
+		<appender-ref ref="rollingFile" />
+	</root>
+
+</configuration>

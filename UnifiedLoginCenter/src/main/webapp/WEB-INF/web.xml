@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+    http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <display-name>UnifiedLoginCenter</display-name>
+
+    <!-- ==================================================== -->
+    <!-- 把所有请求强制转交SSL 配置 -->
+    <!-- ==================================================== -->
+    <login-config>
+        <!-- Authorization setting for SSL -->
+        <auth-method>CLIENT-CERT</auth-method>
+        <realm-name>Client Cert Users-only Area</realm-name>
+    </login-config>
+    <security-constraint>
+        <!-- Authorization setting for SSL -->
+        <web-resource-collection>
+            <web-resource-name>SSL</web-resource-name>
+            <url-pattern>/login/*</url-pattern>
+            <url-pattern>/operator/*</url-pattern>
+            <url-pattern>/right/*</url-pattern>
+            <url-pattern>/role/*</url-pattern>
+            <url-pattern>/static/*</url-pattern>
+            <url-pattern>/index.jsp</url-pattern>
+            <url-pattern>/cert_login.jsp</url-pattern>
+        </web-resource-collection>
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+
+    <!-- ==================================================== -->
+    <!-- session 失效时间 配置 -->
+    <!-- ==================================================== -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+    <!-- ==================================================== -->
+    <!-- ip 过滤器配置 -->
+    <!-- ==================================================== -->
+    <filter>
+        <filter-name>IPFilter</filter-name>
+        <filter-class>
+            com.jetsun.filter.IPFilter
+        </filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>IPFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- ==================================================== -->
+    <!-- 跨站脚本和html注入 过滤器配置 -->
+    <!-- ==================================================== -->
+    <filter>
+        <filter-name>XSSFilter</filter-name>
+        <filter-class>
+            com.jetsun.filter.XSSFilter
+        </filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>XSSFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- ==================================================== -->
+    <!-- 证书 过滤器配置 -->
+    <!-- ==================================================== -->
+    <filter>
+        <filter-name>CertFilter</filter-name>
+        <filter-class>
+            com.jetsun.filter.ClientCertFilter
+        </filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>CertFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- ==================================================== -->
+    <!-- jsp权限 过滤器配置 -->
+    <!-- ==================================================== -->
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>
+            com.jetsun.filter.AccessControlFilter
+        </filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- ==================================================== -->
+    <!-- Struts 过滤器配置 -->
+    <!-- ==================================================== -->
+    <filter>
+        <filter-name>struts2</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+
+    <!-- ==================================================== -->
+    <!-- Srping监听器配置配置 -->
+    <!-- ==================================================== -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath*:spring-config.xml
+        </param-value>
+    </context-param>
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
+
+    <!-- ==================================================== -->
+    <!-- 欢迎页 -->
+    <!-- ==================================================== -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.jsp</location>
+    </error-page>
+</web-app>

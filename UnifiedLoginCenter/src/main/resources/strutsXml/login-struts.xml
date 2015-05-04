@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="login" namespace="/login" extends="ulc">
+
+        <action name="loginAction" class="com.jetsun.action.login.LoginAction" method="login">
+        </action>
+        <action name="logoutAction" class="com.jetsun.action.login.LogoutAction" method="execute">
+        </action>
+
+    </package>
+    <package name="remoteLogin" namespace="/remoteLogin" extends="ulc">
+        <action name="isCertExist" class="com.jetsun.action.login.UnifiedLoginInterface" method="isCertExist"></action>
+        <action name="doLogin" class="com.jetsun.action.login.UnifiedLoginInterface" method="doLogin"></action>
+        <action name="doLoginSSO" class="com.jetsun.action.login.UnifiedLoginInterface" method="doLoginSSO"></action>
+        <action name="checkUserAuthority" class="com.jetsun.action.login.UnifiedLoginInterface" method="checkUserAuthority"></action>
+        <action name="getUserNameAndWorkNo" class="com.jetsun.action.login.UnifiedLoginInterface" method="getUserNameAndWorkNo"></action>
+        <action name="changePassword" class="com.jetsun.action.login.UnifiedLoginInterface" method="changePassword"></action>
+        <action name="getUrl" class="com.jetsun.action.login.UnifiedLoginInterface" method="getUrl"></action>
+        <action name="logout" class="com.jetsun.action.login.UnifiedLoginInterface" method="logout"></action>
+    </package>
+
+</struts>

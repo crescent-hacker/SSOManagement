@@ -1,0 +1,141 @@
+.align-center{
+    margin:0 auto;
+    width:400px;
+    height: 40px;
+    text-align:left;
+}
+/**************************************搜索建议框样式***********************************************/
+
+.bdsug {
+    position: absolute;
+    width: 430px;
+    background: #fff;
+    display: none;
+    border: 1px solid #817F82;
+    top: 25px;
+    overflow-y:scroll;
+    height: 200px;
+    OVERFLOW-X:hidden;
+}
+
+.bdsug ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.bdsug li {
+    width: 100%;
+    color: #000;
+    font: 16px;
+    line-height: 25px;
+    padding: 0 8px;
+    position: relative;
+    cursor: default
+}
+
+.bdsug li.bdsug-s {
+    background: #ebebeb
+}
+
+.bdsug-store span, .bdsug-store b {
+    color: #7A77C8
+}
+
+.bdsug-store-del {
+    font-size: 12px;
+    color: #666;
+    text-decoration: underline;
+    position: absolute;
+    right: 8px;
+    top: 0;
+    cursor: pointer;
+    display: none
+}
+
+.bdsug-s .bdsug-store-del {
+    display: inline-block
+}
+
+.bdsug-ala {
+    display: inline-block;
+    border-bottom: 1px solid #e6e6e6
+}
+
+.bdsug-ala h3 {
+    line-height: 14px;
+    background: url(http://www.baidu.com/img/sug_bd.png?v=06534357.png) no-repeat left center;
+    margin: 6px 0 4px 0;
+    font-size: 12px;
+    font-weight: normal;
+    color: #7B7B7B;
+    padding-left: 20px
+}
+
+.bdsug-ala p {
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 20px
+}
+
+.bdsug-store span, .bdsug-store b {
+    color: #7A77C8
+}
+
+.bdsug-store-del {
+    font-size: 12px;
+    color: #666;
+    text-decoration: underline;
+    position: absolute;
+    right: 8px;
+    top: 0;
+    cursor: pointer;
+    display: none
+}
+
+.bdsug-s .bdsug-store-del {
+    display: inline-block
+}
+
+.bdsug-ala {
+    display: inline-block;
+    border-bottom: 1px solid #e6e6e6
+}
+
+.bdsug-ala h3 {
+    line-height: 14px;
+    background: url(http://www.baidu.com/img/sug_bd.png?v=06534357.png) no-repeat left center;
+    margin: 6px 0 4px 0;
+    font-size: 12px;
+    font-weight: normal;
+    color: #7B7B7B;
+    padding-left: 20px
+}
+
+.bdsug-ala p {
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 20px
+}
+
+.bdsug .bdsug-direct {
+    width: auto;
+    padding: 0;
+    border-bottom: 1px solid #f1f1f1
+}
+
+.searchInput{
+    font-size: 16px;
+    padding: 0;
+    background-image: none;
+    line-height: 25px;
+    /* box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.2); */
+    margin: 0;
+    /*position:absolute;*/
+    /*top:0;*/
+    width:430px;
+    height:25px;
+    border: 1px solid #d9d7d7;
+}
+

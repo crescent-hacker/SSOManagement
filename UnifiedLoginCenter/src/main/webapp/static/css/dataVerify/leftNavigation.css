@@ -1,0 +1,31 @@
+.LeNaH1{
+	width: 154px;
+	height:30px;
+	line-height:30px;
+	background-color: #37b4c0;
+	color: #fff;
+	font-size: 18px;
+	/*margin-top: 5px;*/
+	margin-bottom: 5px;
+	text-align: center;
+    box-shadow: 2px 1px 1px rgba(20%,20%,40%,0.5);
+    margin-left: -0.3em;
+    padding: 0.3em;
+}
+
+.LeNaH2{
+	width: 140px;
+	height:30px;
+	line-height:30px;
+	color: #000;
+	font-size: 15px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+.LeNaH2select{
+	color:#fff;
+	background-color: #49a4c8;
+	/*border:1px solid #339FAA;*/
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="operator" namespace="/operator" extends="ulc">
+
+        <!-->实现编码</-->
+        <action name="operatorAction" class="com.jetsun.action.operator.OperatorAction">
+            <result></result>
+        </action>
+
+    </package>
+
+</struts>
